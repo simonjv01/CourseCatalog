@@ -14,6 +14,9 @@ public class Course {
         this.author = author;
     }
 
+    public Course() {
+    }
+
     public BigInteger getCourseid() {
         return courseid;
     }

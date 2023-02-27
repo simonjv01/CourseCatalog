@@ -26,4 +26,15 @@ public class CatalogController {
 
         return ("Our courses are " + courses);
     }
+
+    @RequestMapping("/firstcourse")
+    public String getSpecificCourse() {
+        Course course = new Course();
+        String courseAppURL = "http://localhost:8080/1";
+        RestTemplate restTemplate = new RestTemplate();
+        course = restTemplate.getForObject(courseAppURL, Course.class);
+
+        assert course != null;
+        return ("Our first course is " + course.getCoursename());
+    }
 }
